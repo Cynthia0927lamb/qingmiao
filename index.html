@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青苗中学校医院 - 健康成材第一站</title>
+    <link rel="icon" href="https://i.imgs.ovh/2026/01/02/CiDIRL.th.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background-color: #f8fdfc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.92);
+            z-index: -1;
+        }
+        
+        /* 顶部导航栏 - 青苗中学风格 */
+        .main-nav {
+            background: linear-gradient(135deg, #0a4d4d 0%, #1d7373 100%);
+            box-shadow: 0 4px 20px rgba(0, 80, 80, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 70px;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .nav-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .nav-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-logo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .nav-logo-text h2 {
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 2px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-logo-text p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 12px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            height: 100%;
+        }
+        
+        .nav-item {
+            padding: 0 25px;
+            color: rgba(255, 255, 255, 0.95);
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s;
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+        
+        .nav-item.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #6cd6d6;
+        }
+        
+        /* 版头样式 - 青苗中学风格 */
+        .header-banner {
+            position: relative;
+            height: 450px;
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(rgba(10, 77, 77, 0.85), rgba(10, 77, 77, 0.9));
+        }
+        
+        .banner-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.4;
+        }
+        
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(10, 77, 77, 0.1), rgba(10, 77, 77, 0.6));
+            z-index: 2;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 3;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* 顶部区域 */
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .hospital-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .hospital-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hospital-logo i {
+            color: #1d7373;
+            font-size: 48px;
+        }
+        
+        .hospital-name {
+            color: white;
+        }
+        
+        .hospital-name h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hospital-name p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        /* 搜索框样式 */
+        .header-search-container {
+            position: relative;
+            width: 400px;
+        }
+        
+        .search-box {
+            position: relative;
+            width: 100%;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 14px 20px;
+            padding-right: 50px;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: #333;
+            transition: all 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background-color: white;
+        }
+        
+        .search-button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #1d7373, #0a4d4d);
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .search-button:hover {
+            background: linear-gradient(135deg, #0a4d4d, #1d7373);
+            transform: translateY(-50%) scale(1.05);
+        }
+        
+        /* 版头主要内容 */
+        .banner-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .banner-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+        
+        .banner-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        /* 主要内容区域 */
+        main {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 80, 80, 0.08);
+            padding: 40px 30px;
+        }
+        
+        .section-title {
+            color: #0a4d4d;
+            font-size: 32px;
+            padding-bottom: 10px;
+            margin-bottom: 35px;
+            border-bottom: 3px solid #1d7373;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        .notice-section {
+            margin-bottom: 70px;
+        }
+        
+        .notice-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .notice-item {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 80, 80, 0.08);
+            transition: all 0.3s;
+            border-left: 5px solid #1d7373;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border-top: 1px solid #f0f9f9;
+        }
+        
+        .notice-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 80, 80, 0.12);
+        }
+        
+        .notice-item h3 {
+            color: #0a4d4d;
+            font-size: 20px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+        
+        .notice-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            background-color: #f0f9f9;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .notice-summary {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            flex-grow: 1;
+            font-size: 15px;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .notice-summary ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .notice-summary li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: white;
+            background: linear-gradient(135deg, #1d7373, #0a4d4d);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 6px;
+            transition: all 0.3s;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 15px;
+            box-shadow: 0 4px 10px rgba(29, 115, 115, 0.2);
+        }
+        
+        .read-more:hover {
+            background: linear-gradient(135deg, #0a4d4d, #1d7373);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(29, 115, 115, 0.3);
+        }
+        
+        .functions-section {
+            margin-bottom: 70px;
+        }
+        
+        .functions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .function-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 80, 80, 0.08);
+            transition: all 0.3s;
+            text-align: center;
+            border-top: 5px solid #1d7373;
+            border: 1px solid #f0f9f9;
+        }
+        
+        .function-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 80, 80, 0.12);
+        }
+        
+        .function-icon {
+            font-size: 48px;
+            color: #1d7373;
+            margin-bottom: 20px;
+        }
+        
+        .function-card h3 {
+            color: #0a4d4d;
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .function-card p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        .function-link {
+            display: inline-block;
+            color: #1d7373;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+            font-size: 15px;
+        }
+        
+        .function-link:hover {
+            border-bottom-color: #1d7373;
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: rgba(10, 77, 77, 0.95);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 40px;
+            color: #6cd6d6;
+            margin-bottom: 15px;
+        }
+        
+        .footer-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-content p {
+            margin-bottom: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-item i {
+            color: #6cd6d6;
+            font-size: 18px;
+        }
+        
+        .copyright {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* 文章页面样式 */
+        .article-page, .doctor-page, .search-results-page, .search-detail-page {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: none;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 80, 80, 0.1);
+            padding: 40px;
+        }
+        
+        .article-header, .search-header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1d7373;
+        }
+        
+        .article-title, .search-title {
+            color: #0a4d4d;
+            font-size: 36px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .article-content, .search-content {
+            line-height: 1.8;
+            font-size: 17px;
+            margin-bottom: 40px;
+        }
+        
+        .article-content p, .search-content p {
+            margin-bottom: 20px;
+        }
+        
+        .article-content ul, .article-content ol, .search-content ul, .search-content ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .article-content li, .search-content li {
+            margin-bottom: 10px;
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            color: #1d7373;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 40px;
+            padding: 12px 25px;
+            border: 2px solid #1d7373;
+            border-radius: 6px;
+            transition: all 0.3s;
+            background-color: white;
+        }
+        
+        .back-to-home:hover {
+            background-color: #1d7373;
+            color: white;
+        }
+        
+        /* 搜索结果页面 */
+        .search-header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1d7373;
+        }
+        
+        .search-title {
+            color: #0a4d4d;
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .search-query {
+            color: #666;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .search-results {
+            margin-bottom: 40px;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px 30px;
+        }
+        
+        .no-results-icon {
+            font-size: 60px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .no-results h3 {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .no-results p {
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .search-suggestions {
+            background-color: #f0f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .search-suggestions h4 {
+            color: #0a4d4d;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .search-suggestions ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .search-suggestions li {
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .search-suggestions li:last-child {
+            border-bottom: none;
+        }
+        
+        .keyword-link {
+            color: #1d7373;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .keyword-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* 医生详情页面样式 */
+        .doctor-header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1d7373;
+        }
+        
+        .doctor-title {
+            color: #0a4d4d;
+            font-size: 36px;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+        
+        .doctor-subtitle {
+            color: #666;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .doctor-content {
+            line-height: 1.8;
+            font-size: 17px;
+            margin-bottom: 40px;
+        }
+        
+        .doctor-specialty {
+            color: #1d7373;
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-left: 4px solid #1d7373;
+            padding-left: 15px;
+        }
+        
+        .doctor-schedule {
+            background-color: #f0f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .doctor-schedule h4 {
+            color: #0a4d4d;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        /* 搜索详情页面样式 */
+        .search-detail-content {
+            padding: 30px;
+            background-color: #f8fdfc;
+            border-radius: 10px;
+            border-left: 4px solid #1d7373;
+            margin: 20px 0;
+        }
+        
+        .search-detail-title {
+            color: #0a4d4d;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .search-detail-meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .search-detail-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 80, 80, 0.08);
+            border-left: 3px solid #1d7373;
+        }
+        
+        .search-detail-item h4 {
+            color: #0a4d4d;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        /* 图片响应式样式 */
+        .article-image-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .article-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .article-image img:hover {
+            transform: scale(1.02);
+        }
+        
+        .image-caption {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .nav-menu {
+                padding: 0 10px;
+            }
+            
+            .nav-item {
+                padding: 0 18px;
+                font-size: 15px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .main-nav {
+                height: 60px;
+            }
+            
+            .nav-logo-text h2 {
+                font-size: 20px;
+            }
+            
+            .nav-logo {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .nav-menu {
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+            
+            .nav-item {
+                padding: 0 15px;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+            
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .header-search-container {
+                width: 100%;
+            }
+            
+            .banner-title {
+                font-size: 36px;
+            }
+            
+            .banner-subtitle {
+                font-size: 20px;
+            }
+            
+            .hospital-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .hospital-name h1 {
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-nav {
+                padding: 0 10px;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 0;
+            }
+            
+            .nav-logo-area {
+                margin-bottom: 10px;
+            }
+            
+            .nav-menu {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-item {
+                flex: 1;
+                text-align: center;
+                padding: 10px 5px;
+                font-size: 13px;
+            }
+            
+            .header-banner {
+                height: 350px;
+            }
+            
+            .hospital-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .banner-title {
+                font-size: 32px;
+            }
+            
+            .banner-subtitle {
+                font-size: 18px;
+            }
+            
+            .notice-list, .functions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            main {
+                padding: 30px 20px;
+            }
+            
+            .article-page, .doctor-page, .search-results-page, .search-detail-page {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .nav-item {
+                font-size: 12px;
+                padding: 10px 3px;
+            }
+            
+            .nav-logo-text h2 {
+                font-size: 18px;
+            }
+            
+            .header-banner {
+                height: 300px;
+            }
+            
+            .hospital-logo {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .hospital-logo i {
+                font-size: 36px;
+            }
+            
+            .hospital-name h1 {
+                font-size: 24px;
+            }
+            
+            .banner-title {
+                font-size: 28px;
+            }
+            
+            .article-title, .doctor-title, .search-title {
+                font-size: 28px;
+            }
+            
+            .section-title {
+                font-size: 26px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo-area">
+                <div class="nav-logo">
+                    <img src="https://i.imgs.ovh/2026/01/02/CiDIRL.th.png" alt="青苗中学校医院" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                </div>
+                <div class="nav-logo-text">
+                    <h2>青苗中学校医院</h2>
+                    <p>QINGMIAO SCHOOL HOSPITAL</p>
+                </div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-item active">首页</a></li>
+                <li><a href="#" class="nav-item">医疗服务</a></li>
+                <li><a href="#" class="nav-item">健康管理</a></li>
+                <li><a href="#" class="nav-item">健康知识</a></li>
+                <li><a href="#" class="nav-item">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="header-banner">
+        <!-- 背景图片 -->
+        <img id="bannerBg" class="banner-background" src="https://i.imgs.ovh/2025/12/18/CEd86X.png" alt="医院背景">
+        
+        <!-- 遮罩层 -->
+        <div id="bannerOverlay" class="banner-overlay"></div>
+        <div class="header-content">
+            <div class="header-top">
+                <div class="hospital-header">
+                    <div class="hospital-logo">
+                        <img src="https://i.imgs.ovh/2026/01/02/CiDIRL.md.png" alt="校医院Logo" style="width: 110%; height: 110%; border-radius: 50%;">
+                        <div class="pulse-overlay"></div>
+                    </div>     
+                    <div class="hospital-name">
+                        <h1>青苗中学校医院</h1>
+                        <p>QINGMIAO SCHOOL HOSPITAL</p>
+                    </div>
+                </div>
+                  
+                <div class="header-search-container">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="搜索医生、值班、就诊记录..." id="searchInput">
+                        <button class="search-button" id="searchButton">
+                            🔍
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="banner-main">
+                <h1 class="banner-title">守护健康，助力成长</h1>
+                <p class="banner-subtitle">青苗中学校医院致力于为全体师生提供专业、便捷、高效的医疗服务</p>
+            </div>
+        </div>
+    </div>
+
+    <main id="mainContent">
+        <section class="notice-section">
+            <h2 class="section-title">最新通知</h2>
+            <div class="notice-list">
+                <article class="notice-item">
+                    <h3>新生入学体检通知｜健康成材第一站</h3>
+                    <div class="notice-date">2025年8月12日</div>
+                    <div class="notice-summary">
+                        <p>为保障2025级全体新生身心健康，构建完善的健康档案体系，我校医院将组织新生入学体检...</p>
+                        <ul>
+                            <li>体检时间：2025年8月28日-8月30日</li>
+                            <li>体检地点：青苗中学校医院主楼</li>
+                            <li>重要提示：包含YC基因筛查项目</li>
+                        </ul>
+                    </div>
+                    <a href="#article1" class="read-more detail-link" data-target="article1">查看详情</a>
+                </article>
+                
+                <article class="notice-item">
+                    <h3>2025年秋季学期校医院医生值班表</h3>
+                    <div class="notice-date">2025年8月25日</div>
+                    <div class="notice-summary">
+                        <p>2025年秋季学期校医院医生值班安排已确定，为方便师生就医，现将值班表公布如下...</p>
+                        <ul>
+                            <li>门诊时间：周一至周五 8:00-17:30</li>
+                            <li>急诊时间：24小时全天候服务</li>
+                            <li>值班医生：张蕾、吴英才、林译等</li>
+                        </ul>
+                    </div>
+                    <a href="#article2" class="read-more detail-link" data-target="article2">查看详情</a>
+                </article>
+            </div>
+        </section>
+        
+        <section class="functions-section">
+            <h2 class="section-title">快捷服务</h2>
+            <div class="functions-grid">
+                <div class="function-card">
+                    <div class="function-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>在线预约</h3>
+                    <p>在线预约挂号，避免排队等候，节省就诊时间，提高就医效率。</p>
+                    <a href="#" class="function-link">立即预约</a>
+                </div>
+                
+                <div class="function-card">
+                    <div class="function-icon">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <h3>健康档案</h3>
+                    <p>建立个人电子健康档案，记录体检结果、就诊记录，便于健康管理。</p>
+                    <a href="#" class="function-link">查看档案</a>
+                </div>
+                
+                <div class="function-card">
+                    <div class="function-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>药品查询</h3>
+                    <p>查询校医院药品库存、价格及用药说明，方便师生了解药品信息。</p>
+                    <a href="#" class="function-link">查询药品</a>
+                </div>
+                
+                <div class="function-card">
+                    <div class="function-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>急救服务</h3>
+                    <p>24小时急救电话：027-12345679，校园内紧急医疗情况请立即拨打。</p>
+                    <a href="#" class="function-link">紧急呼叫</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-hospital-alt"></i>
+            </div>
+            <h3>青苗中学校医院</h3>
+            <p>我们致力于为青苗中学全体师生提供专业、全面、贴心的医疗服务，保障校园健康，助力学生成长。</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>地址：武阳市青苗路1号青苗中学校内</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>电话：027-12345679</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>邮箱：hospital@qingmiao.edu.cn</span>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>版权所有 © 2025 青苗中学校医院 | 守护健康，助力成长</p>
+                <p>※ 声明：本网站内容仅为虚拟场景，与实际医疗机构、医生无关</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="article1" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">新生入学体检通知｜健康成材第一站</h1>
+            <div class="article-meta">
+                <span>2025年8月12日</span>
+                <span>青苗中学校医院</span>
+            </div>
+        </div>
+        
+        <div class="article-content">
+            <p>为保障2025级全体新生身心健康，构建完善的健康档案体系，我校医院将组织新生入学体检。本次体检将在青苗中学校医院集中开展，所有新生均须参加，相关事宜通知如下：</p>
+            
+            <h3>一、体检时间与安排</h3>
+            <p><strong>2025年8月28日-8月30日（上午7:30-11:30，下午13:30-16:30）</strong></p>
+            <p>请按报名编号分批次前往，具体时间安排如下：</p>
+            <ul>
+                <li><strong>8月28日（星期三）：</strong>报名编号001-200号</li>
+                <li><strong>8月29日（星期四）：</strong>报名编号201-400号</li>
+                <li><strong>8月30日（星期五）：</strong>报名编号401-500号</li>
+            </ul>
+            
+            <h3>二、体检地点</h3>
+            <p><strong>青苗中学校医院主楼（校园东侧健康中心）</strong></p>
+            <p>地址：武阳市青苗路1号青苗中学校内</p>
+            
+            <h3>三、体检项目</h3>
+            <p>本次体检包含以下项目，全面评估学生身体状况：</p>
+            <ul>
+                <li><strong>1. 常规检查：</strong>身高、体重、视力、听力、血压、脉搏、体温</li>
+                <li><strong>2. 内科检查：</strong>心、肺、肝、脾、神经系统全面检查</li>
+                <li><strong>3. 外科检查：</strong>皮肤、四肢、脊柱、关节、淋巴系统</li>
+                <li><strong>4. 五官科检查：</strong>耳、鼻、喉、口腔、牙齿健康</li>
+                <li><strong>5. 实验室检查：</strong>血常规、尿常规、肝功能、肾功能</li>
+                <li><strong>6. 影像学检查：</strong>胸部X光检查（排除肺结核等传染病）</li>
+                <li><strong>7. 心电图检查：</strong>心脏功能初步筛查</li>
+                <li><strong>8. YC基因筛查：</strong>潜能基因检测与评估（学校特色项目）</li>
+            </ul>
+            
+            <h3>四、注意事项</h3>
+            <p>1. <strong>空腹要求：</strong>体检当日早晨请勿进食、饮水，需保持至少8小时空腹状态，确保血液检测结果准确。</p>
+            <p>2. <strong>服装要求：</strong>请穿着宽松、易穿脱的衣物，女生请避免穿连衣裙、连体裤。</p>
+            <p>3. <strong>材料准备：</strong>请携带录取通知书、身份证（或户口本）及近期一寸免冠照片2张。</p>
+            <p>4. <strong>电子设备管理：</strong>为保障体检秩序与隐私安全，所有体检区域严禁携带手机、智能手表等电子设备，入场前请配合工作人员存放至指定保管处。</p>
+            <p>5. <strong>YC基因筛查说明：</strong>本次体检包含"YC潜能基因筛查"项目，用于评估学生的体质特质与发展潜能，为后续个性化培养提供科学依据。</p>
+            
+            <h3>五、联系我们</h3>
+            <p>健康的身体是成长的基石，青苗中学校医院始终将学生身心发展置于首位。请各位新生与家长积极配合，共同完成入学前的重要准备。</p>
+            
+            <p><strong>咨询电话：</strong>027-12345679（校医院总机）</p>
+            <p><strong>体检专线：</strong>027-12345680</p>
+            <p><strong>负责人：</strong>吴英才 主任医师</p>
+        </div>
+        
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+
+    <div id="article2" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">2025年秋季学期校医院医生值班表</h1>
+            <div class="article-meta">
+                <span>2025年8月25日</span>
+                <span>青苗中学校医院办公室</span>
+            </div>
+        </div>
+        
+        <div class="article-content">
+            <p>2025年秋季学期校医院医生值班安排已确定，为方便师生就医，现将值班表公布如下。校医院实行24小时值班制度，确保及时处理各类医疗需求。</p>
+            
+            <h3>一、门诊时间安排</h3>
+            <p><strong>常规门诊：</strong>周一至周日 8:00-18:00（中午12:00-13:30休息）</p>
+            <p><strong>急诊服务：</strong>24小时全天候服务（夜间请按急诊门铃）</p>
+            
+            <h3>二、紧急联系方式</h3>
+            <p><strong>校医院总机：</strong>027-12345679</p>
+            <p><strong>急救电话：</strong>027-12345679（校内直接拨打12345679）</p>
+            <p><strong>心理热线：</strong>027-12345681（周一至周五 14:00-17:00）</p>
+            
+            <p>青苗中学校医院全体医护人员将竭诚为全校师生提供优质的医疗服务，保障校园健康安全。</p>
+        </div>
+        
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <div id="search-duty" class="search-detail-page">
+        <div class="search-header">
+            <h1 class="search-title">本周校医院医生值班表</h1>
+            <div class="article-meta">
+                <span>2025年9月08日</span>
+                <span>青苗中学校医院办公室</span>
+            </div>
+        </div>
+        
+        <div class="search-content">
+            <div class="search-detail-content">
+                <h3 class="search-detail-title">2025年9月第3周医生值班安排</h3>
+                <div class="search-detail-meta">
+                    <span>更新时间：2025年9月08日 08:30</span>
+                    <span>值班周期：9月9日-9月15日</span>
+                </div>
+                
+                <div class="search-detail-item" style="margin-top: 20px; overflow-x: auto;">
+                    <h4>详细值班安排表（9月9日-9月15日）</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                        <thead>
+                            <tr style="background-color: #1d7373; color: white;">
+                                <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">日期</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">时间段</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">值班医生</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">科室</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">特殊备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background-color: #f8fdfc;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">9月9日（周二）</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">9:00-18:00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">张蕾</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">内科/营养科</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">英才班牛奶配送审核</td>
+                            </tr>
+                            <tr style="background-color: white;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">9月10日（周三）</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">9:00-18:00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">林译</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">营养科/生物监测</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">农场罐头营养成分抽检</td>
+                            </tr>
+                            <tr style="background-color: #f8fdfc;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">9月11日（周四）</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">9:00-18:00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">吴英才</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">特殊项目部</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">幼苗共育同步率评估日</td>
+                            </tr>
+                            <tr style="background-color: white;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">9月12日（周五）</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">9:00-18:00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">张蕾</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">内科/营养科</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">英才班每周营养剂注射日</td>
+                            </tr>
+                            <tr style="background-color: #f8fdfc;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">9月13日（周六）</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">9:00-18:00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">王博</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">全科</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">仅处理急诊</td>
+                            </tr>
+                            <tr style="background-color: white;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">9月14日（周日）</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">9:00-18:00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">林译</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">护理站</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">牛奶营养成分抽检</td>
+                            </tr>
+                            <tr style="background-color: #f8fdfc;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">9月15日（周一）</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">8:00-18:00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">简述之</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">营养科/生物监测</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">仅处理急诊</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <div id="search-jianshuzhi" class="search-detail-page">
+        <div class="search-header">
+            <h1 class="search-title">简述之 医师</h1>
+            <div class="article-meta">
+                <span>青苗中学校医院人事档案</span>
+                <span>档案编号：QM-HR-2023-009</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div style="display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start; margin-top: 20px;">
+                <div style="flex: 0 0 160px; text-align: center;">
+                    <div class="article-image" onclick="openImageModal('https://i.imgs.ovh/2026/01/01/CNU8QM.jpeg')">
+                        <img src="https://i.imgs.ovh/2026/01/01/CNU8QM.jpeg" alt="简述之" style="width: 150px; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <p style="color: #666; font-size: 13px; margin-top: 8px;">医师证件照</p>
+                </div>
+                <div style="flex: 1; min-width: 280px;">
+                    <div class="search-detail-item">
+                        <h4 style="margin-bottom: 10px; color: #0a4d4d; font-size: 18px;">基本信息</h4>
+                        <ul style="list-style: none; padding-left: 0; margin: 0;">
+                            <li><strong>姓名：</strong>简述之</li>
+                            <li><strong>性别：</strong>男</li>
+                            <li><strong>出生日期：</strong>1990年5月15日</li>
+                            <li><strong>学历：</strong>医学硕士</li>
+                            <li><strong>执业证书编号：</strong>HB20230123456</li>
+                        </ul>
+                    </div>
+                    <div class="search-detail-item">
+                        <h4 style="margin-bottom: 10px; color: #0a4d4d; font-size: 18px;">工作经历</h4>
+                        <ul style="list-style: none; padding-left: 0; margin: 0;">
+                            <li><strong>2023年8月-至今：</strong>青苗中学校医院，临时值班医师</li>
+                            <li><strong>2020年7月-2023年7月：</strong>武阳市第一医院，急诊科医师</li>
+                            <li><strong>2018年9月-2020年6月：</strong>兼达医学院附属医院，住院医师规范化培训</li>
+                        </ul>
+                    </div>
+                    <div class="search-detail-item">
+                        <h4 style="margin-bottom: 10px; color: #0a4d4d; font-size: 18px;">专业能力</h4>
+                        <ul style="list-style: none; padding-left: 0; margin: 0;">
+                            <li><strong>擅长领域：</strong>全科医学、急诊处理、常见病诊疗</li>
+                            <li><strong>专业特长：</strong>急诊抢救、外伤处理、心肺复苏</li>
+                            <li><strong>证书资格：</strong>执业医师资格证、全科医师培训合格证、急救技能培训师</li>
+                        </ul>
+                    </div>
+                    <div class="search-detail-item">
+                        <h4 style="margin-bottom: 10px; color: #0a4d4d; font-size: 18px;">工作职责</h4>
+                        <ul style="list-style: none; padding-left: 0; margin: 0;">
+                            <li>负责周末及节假日校医院值班工作</li>
+                            <li>处理校园内急诊病例和突发医疗事件</li>
+                            <li>协助日常门诊工作，特别是全科医学咨询</li>
+                            <li>参与校园急救技能培训和健康教育</li>
+                            <li>协助建立学生健康档案和医疗记录</li>
+                        </ul>
+                    </div>
+                    <div class="search-detail-item">
+                        <h4 style="margin-bottom: 10px; color: #0a4d4d; font-size: 18px;">联系方式</h4>
+                        <ul style="list-style: none; padding-left: 0; margin: 0;">
+                            <li><strong>工作电话：</strong>027-12345679（转1006）</li>
+                            <li><strong>值班时间：</strong>周一 9:00-18:00（及其他临时值班安排）</li>
+                            <li><strong>紧急联系：</strong>通过校医院总机转接</li>
+                        </ul>
+                    </div>
+                    <div class="search-detail-item">
+                        <h4 style="margin-bottom: 10px; color: #0a4d4d; font-size: 18px;">备注</h4>
+                        <p style="color: #555; line-height: 1.6;">简述之医生为青苗中学校医院临时值班医师，工作认真负责，受到师生好评。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-image-container" style="margin-top: 30px; text-align: center;">
+                <div class="article-image" onclick="openImageModal('https://i.imgs.ovh/2026/01/01/CNU6Tx.jpeg')">
+                    <img src="https://i.imgs.ovh/2026/01/01/CNU6Tx.jpeg" alt="简述之工作照" style="max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                </div>
+                <p class="image-caption" style="color: #666; font-size: 18px;">简述之医生日常工作照 </p>
+                <p class="image-caption" style="color: transparent; font-size: 14px;">英材为基，种为其链; </p>
+                <p class="image-caption" style="color: transparent; font-size: 14px;">续此灵根，洞天乃见; </p>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <div id="search-guandahua" class="search-detail-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学校医院就诊记录-官大华</h1>
+            <div class="article-meta">
+                <span>2024年11月07日</span>
+                <span>青苗中学校医院</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageModal('https://i.imgs.ovh/2025/12/16/Co88Lp.jpeg')">
+                    <img src="https://i.imgs.ovh/2025/12/16/Co88Lp.jpeg" alt="官大华">
+                </div>
+                <p class="image-caption">官大华同学的就诊记录（图片可点击放大）</p>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <div id="search-baimumu" class="search-detail-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学校医院就诊记录-白目目</h1>
+            <div class="article-meta">
+                <span>2024年7月09日</span>
+                <span>青苗中学校医院</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageModal('https://i.imgs.ovh/2025/12/16/CoeC39.jpeg')">
+                    <img src="https://i.imgs.ovh/2025/12/16/CoeC39.jpeg" alt="白目目">
+                </div>
+                <p class="image-caption">白目目同学的就诊记录（图片可点击放大）</p>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <div id="search-rongyi" class="search-detail-page">
+          <div class="article-header">
+            <h1 class="article-title">青苗中学校医院就诊记录-容易</h1>
+            <div class="article-meta">
+                <span>2024年5月06日</span>
+                <span>青苗中学校医院</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageModal('https://i.imgs.ovh/2025/12/16/Co851c.jpeg')">
+                    <img src="https://i.imgs.ovh/2025/12/16/Co851c.jpeg" alt="容易">
+                </div>
+                <p class="image-caption">容易同学的就诊记录（图片可点击放大）</p>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <div id="search-linyou" class="search-detail-page">
+           <div class="article-header">
+            <h1 class="article-title">青苗中学校医院就诊记录-林又</h1>
+            <div class="article-meta">
+                <span>2024年11月06日</span>
+                <span>青苗中学校医院</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageModal('https://i.imgs.ovh/2025/12/16/Coe7Ym.jpeg')">
+                    <img src="https://i.imgs.ovh/2025/12/16/Coe7Ym.jpeg" alt="林又">
+                </div>
+                <p class="image-caption">林又同学的就诊记录（图片可点击放大）</p>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <div id="searchResultsPage" class="search-results-page">
+        <div class="search-header">
+            <h1 class="search-title">搜索结果</h1>
+            <p class="search-query">搜索关键词：<span id="searchQueryDisplay"></span></p>
+        </div>
+        
+        <div class="search-results" id="searchResultsContent">
+        </div>
+        
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <script>
+        function openImageModal(src) {
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+                cursor: pointer;
+            `;
+            const img = document.createElement('img');
+            img.src = src;
+            img.style.cssText = `
+                max-width: 90%;
+                max-height: 90%;
+                border-radius: 8px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            `;
+            modal.appendChild(img);
+            modal.onclick = () => modal.remove();
+            document.body.appendChild(modal);
+        }
+
+        const searchData = [
+            {
+                keywords: ['值班',  '值班表'],
+                title: '本周校医院医生值班表',
+                description: '2025年9月第3周医生值班安排，包含昨日值班医生信息',
+                target: 'search-duty',
+                date: '2025年9月16日'
+            },
+            {
+                keywords: ['简述之', '简述之个人资料'],
+                title: '简述之医生个人资料',
+                description: '简述之医生的基本信息、工作经历和专业能力',
+                target: 'search-jianshuzhi',
+                date: '青苗中学校医院人事档案'
+            },
+            {
+                keywords: ['官大华'],
+                title: '官大华就诊记录',
+                description: '官大华肩周炎就诊记录',
+                target: 'search-guandahua',
+                date: '2025年8月21日'
+            },
+            {
+                keywords: ['白目目'],
+                title: '白目目就诊记录',
+                description: '白目目结膜炎就诊记录',
+                target: 'search-baimumu',
+                date: '2025年9月5日'
+            },
+            {
+                keywords: ['容易'],
+                title: '容易就诊记录',
+                description: '容易关节酸痛就诊记录',
+                target: 'search-rongyi',
+                date: '2025年9月10日'
+            },
+            {
+                keywords: ['林又'],
+                title: '林又就诊记录',
+                description: '林又营养不良就诊记录',
+                target: 'search-linyou',
+                date: '2025年8月30日'
+            }
+
+        ];
+        
+        // 导航栏交互效果
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelectorAll('.nav-item').forEach(nav => {
+                    nav.classList.remove('active');
+                });
+                
+                this.classList.add('active');
+
+                hideAllPages();
+                showMainPage();
+
+                if (!this.textContent.includes('首页')) {
+                    alert('"' + this.textContent + '"功能正在建设中，敬请期待。');
+                }
+            });
+        });
+        
+        // 通知公告点击效果 - 跳转到完整文章
+        document.querySelectorAll('.detail-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                
+                hideAllPages();
+                
+                document.getElementById(targetId).style.display = 'block';
+                
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        document.querySelectorAll('.function-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const functionName = this.closest('.function-card').querySelector('h3').textContent;
+                alert('"' + functionName + '"功能正在建设中，敬请期待。');
+            });
+        });
+        
+        document.querySelectorAll('.back-to-home').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                hideAllPages();
+                
+                showMainPage();
+                
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        document.getElementById('searchButton').addEventListener('click', performSearch);
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const query = searchInput.value.trim().toLowerCase();
+            
+            if (!query) {
+                alert('请输入搜索关键词');
+                return;
+            }
+            
+            const results = searchData.filter(item => {
+                return item.keywords.some(keyword => 
+                    keyword.toLowerCase().includes(query) || query.includes(keyword.toLowerCase())
+                );
+            });
+            
+            hideAllPages();
+            
+            if (results.length > 0) {
+
+                if (results.length === 1) {
+                    const result = results[0];
+                    const targetPage = document.getElementById(result.target);
+                    if (targetPage) {
+                        targetPage.style.display = 'block';
+                    }
+                } else {
+
+                    document.getElementById('searchResultsPage').style.display = 'block';
+                    document.getElementById('searchQueryDisplay').textContent = query;
+                    
+                    const resultsContent = document.getElementById('searchResultsContent');
+                    
+                    let resultsHTML = `
+                        <div class="search-results">
+                            <p class="results-count">找到 ${results.length} 条相关结果</p>
+                            <div class="search-suggestions">
+                                <ul>
+                    `;
+                    
+                    results.forEach(result => {
+                        resultsHTML += `
+                            <li>
+                                <a href="javascript:void(0)" class="keyword-link" data-target="${result.target}">
+                                    <strong>${result.title}</strong>
+                                </a>
+                                <div style="color: #666; font-size: 14px; margin-top: 5px;">${result.description}</div>
+                                <div style="color: #999; font-size: 13px; margin-top: 3px;">${result.date}</div>
+                            </li>
+                        `;
+                    });
+                    
+                    resultsHTML += `
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    
+                    resultsContent.innerHTML = resultsHTML;
+                    
+                    document.querySelectorAll('.keyword-link[data-target]').forEach(link => {
+                        link.addEventListener('click', function() {
+                            const targetId = this.getAttribute('data-target');
+                            
+                            document.getElementById('searchResultsPage').style.display = 'none';
+                            
+                            const targetPage = document.getElementById(targetId);
+                            if (targetPage) {
+                                targetPage.style.display = 'block';
+                            }
+                            
+                            window.scrollTo(0, 0);
+                        });
+                    });
+                }
+            } else {
+                document.getElementById('searchResultsPage').style.display = 'block';
+                document.getElementById('searchQueryDisplay').textContent = query;
+                
+                const resultsContent = document.getElementById('searchResultsContent');
+                
+                const noResultsHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">🔍</div>
+                        <h3>没有查找到与"${query}"相关的信息</h3>
+                        </div>
+                    </div>
+                `;
+                
+                resultsContent.innerHTML = noResultsHTML;
+                
+                document.querySelectorAll('.keyword-link[data-keyword]').forEach(link => {
+                    link.addEventListener('click', function() {
+                        const keyword = this.getAttribute('data-keyword');
+                        document.getElementById('searchInput').value = keyword;
+                        performSearch();
+                    });
+                });
+            }
+            
+            window.scrollTo(0, 0);
+        }
+        
+        function hideAllPages() {
+            document.querySelectorAll('.article-page').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            document.querySelectorAll('.doctor-page').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            document.querySelectorAll('.search-detail-page').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            document.getElementById('searchResultsPage').style.display = 'none';
+            
+            document.getElementById('mainContent').style.display = 'none';
+            document.querySelector('.header-banner').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+        }
+        
+        function showMainPage() {
+            document.getElementById('mainContent').style.display = 'block';
+            document.querySelector('.header-banner').style.display = 'block';
+            document.querySelector('footer').style.display = 'block';
+        }
+        
+        document.getElementById('searchInput').addEventListener('blur', function() {
+            if (this.value === '') {
+                this.placeholder = '搜索医生、值班、就诊记录...';
+            }
+        });
+    </script>
+</body>
+</html>
